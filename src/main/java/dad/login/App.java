@@ -7,15 +7,14 @@ import javafx.stage.Stage;
 public class App extends Application{
 
 	
-	Stage primaryStage = new Stage();
+	public static Stage primaryStage;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		this.primaryStage = primaryStage;
+		App.primaryStage=primaryStage;
 		
 		Controlador control= new Controlador();
-		control.onCancelar(primaryStage);
 		primaryStage.setTitle("login");
 		primaryStage.setScene(new Scene(control.getView()));
 		primaryStage.show();
